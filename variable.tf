@@ -32,11 +32,11 @@ variable "subnet_name_02" {
 }
 
 variable "availability_zone_a" {
-  default = "ap-south-1a"
+  default = "us-west-2a"
 }
 
 variable "availability_zone_b" {
-  default = "ap-south-1b"
+  default = "us-west-2b"
 }
 
 variable "cidr_route" {
