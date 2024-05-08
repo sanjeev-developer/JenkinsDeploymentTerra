@@ -115,11 +115,6 @@ variable "s3_bucket_tfstate" {
   default = "terraform.tfstate"
 }
 
-variable "s3_bucket_tfstate" {
-  type    = string
-  default = "terraform.tfstate"
-}
-
 variable "s3_acl" {
   type    = string
   default = "private"
