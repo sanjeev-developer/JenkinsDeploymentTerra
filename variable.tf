@@ -3,7 +3,7 @@ variable "vpc_name" {
 }
 
 variable "aws_region" {
-  default = "ap-south-1"
+  default = "us-west-2"
 }
 
 variable "subnet_cidr_01" {
@@ -123,5 +123,10 @@ variable "s3_bucket_tfstate" {
 variable "s3_acl" {
   type    = string
   default = "private"
+}
+
+variable "dynamo_db_tabel_name" {
+  type    = string
+  default = "sanjeev_dynamo_table_name"
 }
 
