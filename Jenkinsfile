@@ -19,7 +19,14 @@ pipeline {
         }
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+        stage('Terraform destroy') {
+            steps {
+                // Manual approval step
+                input 'Approve destroying resources?'
+                sh 'terraform destroy -auto-approve'
             }
         }
     }
