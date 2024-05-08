@@ -12,9 +12,9 @@ subnet_name_01 = "SubnetTag001"
 
 subnet_name_02 = "SubnetTag002"
 
-availability_zone_a = "ap-south-1a"
+availability_zone_a = "us-west-2a"
 
-availability_zone_b = "ap-south-1b"
+availability_zone_b = "us-west-2b"
 
 cidr_route = "0.0.0.0/0"
 
