@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Terraform Validate') {
             steps {
-                sh 'terraform validate'
+                sh 'terraform plan'
             }
         }
         stage('Terraform Apply') {
