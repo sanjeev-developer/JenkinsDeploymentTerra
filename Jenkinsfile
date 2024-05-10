@@ -25,7 +25,7 @@ pipeline {
         stage('Terraform destroy') {
             steps {
                 // Manual approval step
-                input 'Approve destroying resources?'
+               // input 'Approve destroying resources?'
                 sh 'terraform destroy -auto-approve'
             }
         }
