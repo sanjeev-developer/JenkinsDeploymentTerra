@@ -1,0 +1,46 @@
+stages:
+  - deploy
+  - init
+  - plan
+  - apply
+  - destroy  # Optional stage for destroying infrastructure
+
+terraform_image:
+  stage: deploy
+  image: hashicorp/terraform:1.8.3
+  script:
+    - terraform --version
+
+variables:
+  AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+  AWS_SECRET_ACCESS_KEY : ${AWS_SECRET_ACCESS_KEY}
+  AWS_DEFAULT_REGION: "us-west-2"  
+
+before_script:
+  - terraform init
+
+init:
+  stage: init
+  script:
+    - terraform init
+
+plan:
+  stage: plan
+  script:
+    - terraform plan
+  dependencies:
+    - terraform init  
+
+apply:
+  stage: apply
+  script:
+    - terraform apply -auto-approve  #Use with caution!
+  dependencies:
+    - terraform plan   
+
+destroy:  # Optional stage
+  stage: destroy
+  script:
+    - terraform destroy -auto-approve  # Use with extreme caution!
+  dependencies:
+    - terraform apply   
